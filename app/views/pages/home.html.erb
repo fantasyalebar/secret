@@ -1,0 +1,21 @@
+<div class="container">
+	<h1>👨‍💻 👨🏾‍💻 Bienvenue sur notre super🏋🏿 site 👩🏿‍💻 👩🏼‍💻</h1>
+
+	<h1>Users</h1>
+
+<a href="<%= new_user_path %>" target="_blank">Segn Up</a>
+<a href="<%= new_session_path %>">Login</a>
+<% @users.each do |user| %>
+	<h2><%= user.email %></h2>
+	<a href="<%= user_path(user.id)%>" target="_blank">see profil</a> 
+<% end %>
+
+<!-- if user is login -->
+	<p> 
+		<%= link_to  'la réponse à la question de l\'univers.', '/pages/secret_page', target:"_blank" %>		
+	</p>
+<!-- if user is not login 
+     print login page 
+     -->
+
+</div>

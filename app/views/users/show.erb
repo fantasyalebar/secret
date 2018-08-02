@@ -1,0 +1,11 @@
+<div class="container">
+<h1>🤴🏾 Here is your profil 👸🏾</h1>
+
+<p><%= @user.email %></p>
+
+<a href="<%= home_path %>">Return to home</a>
+<a href="<%= edit_user_path %>" class="btn btn-info">Edit profil</a>
+<a href="<%= user_path %>" class="btn btn-danger" data-confirm="Are you sur ?" data-method="DELETE">
+Delete profil</a>
+
+</div>
