@@ -9,9 +9,11 @@ before_action :set_find_id, only: [:edit, :update, :show, :destroy]
   def create
     @user = User.new(user_params)
     if @user.save
+      session[params[:id]] = @user.id
+      puts "je suis passer"
       redirect_to home_path, notice: "Thank you for signing up"
     else
-      render new
+      render new_user_path
     end
   end 
     
@@ -43,8 +45,6 @@ before_action :set_find_id, only: [:edit, :update, :show, :destroy]
   end 
 
   def set_find_id
-    
     @user = User.find(params[:id])
-    
   end
 end
